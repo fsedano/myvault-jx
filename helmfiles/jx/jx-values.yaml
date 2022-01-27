@@ -22,7 +22,7 @@ jxRequirements:
     schedule: ""
   cluster:
     chartKind: pages
-    chartRepository: https://github.com/jenkins-x-bdd/repo.git
+    chartRepository: http://k3d-tekton-server-0:8200
     clusterName: kind
     devEnvApprovers:
     - todo
@@ -34,6 +34,8 @@ jxRequirements:
     registry: ghcr.io
   environments:
   - key: dev
+    owner: fsedano
+    repository: myvault-jx
   - key: staging
   ingress:
     domain: change.me
@@ -44,6 +46,8 @@ jxRequirements:
       email: ""
       enabled: false
       production: false
+  pipelineUser:
+    username: fsedano
   repository: bucketrepo
   secretStorage: vault
   vault:

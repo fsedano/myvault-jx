@@ -5,8 +5,8 @@ spec:
     enabled: false
     schedule: ""
   cluster:
-    chartRepository: http://k3d-tekton-server-0:8200
     chartKind: pages
+    chartRepository: http://k3d-tekton-server-0:8200
     clusterName: kind
     devEnvApprovers:
     - todo
@@ -18,10 +18,11 @@ spec:
     registry: ghcr.io
   environments:
   - key: dev
+    owner: fsedano
+    repository: myvault-jx
   - key: staging
   ingress:
     domain: ""
-    externalDNS: false
     ignoreLoadBalancer: true
     kind: ingress
     namespaceSubDomain: .jx.
@@ -29,8 +30,10 @@ spec:
       email: ""
       enabled: false
       production: false
+  pipelineUser:
+    username: fsedano
   repository: bucketrepo
   secretStorage: vault
   vault:
-    url: "127.0.0.1:8200"
+    url: 127.0.0.1:8200
   webhook: lighthouse
